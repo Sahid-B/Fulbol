@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Debates - GolESPE 360</title>
+  <link rel="stylesheet" href="../../css/debates.css">
+</head>
+<body>
+ <header>
+    <a href="../../index.html" class="boton-inicio">Inicio</a>
+    <h1>Debates Destacados</h1>
+  </header>
+
+  <div class="debates-container">
+    <main class="debates-main">
+      <div class="debates-header">
+        <h2 class="debates-title">Debates Activos</h2>
+        <button class="create-debate-btn" onclick="alert('Funcionalidad en desarrollo')">
+          + Crear Debate
+        </button>
+      </div>
+
+      <div class="filter-tabs">
+        <div class="filter-tab active" onclick="filterDebates('all')">Todos</div>
+        <div class="filter-tab" onclick="filterDebates('hot')">Populares</div>
+        <div class="filter-tab" onclick="filterDebates('trending')">Trending</div>
+        <div class="filter-tab" onclick="filterDebates('recent')">Recientes</div>
+      </div>
+
+      <div class="debates-grid">
+        <div class="debate-card" data-category="hot">
+          <div class="debate-status hot">Popular</div>
+          <div class="debate-header">
+            <div>
+              <h3 class="debate-title">¿Quién ganará La Liga este año?</h3>
+              <div class="debate-meta">
+                <span>Por AdminGol</span>
+                <span>•</span>
+                <span>3 junio 2025</span>
+                <span>•</span>
+                <span>2,845 votos</span>
+              </div>
+            </div>
+          </div>
+          <p class="debate-description">
+            Con la temporada avanzando, el título de La Liga está más reñido que nunca. Comparte tu predicción y argumentos sobre qué equipo tiene más posibilidades de llevarse el campeonato.
+          </p>
+          <div class="debate-options">
+            <div class="debate-option" onclick="vote(this, 'real-madrid')">
+              <div class="option-text">Real Madrid</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 45%"></div>
+              </div>
+              <div class="option-votes">
+                <span>1,280 votos</span>
+                <span>45%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'barcelona')">
+              <div class="option-text">FC Barcelona</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 38%"></div>
+              </div>
+              <div class="option-votes">
+                <span>1,081 votos</span>
+                <span>38%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'atletico')">
+              <div class="option-text">Atlético Madrid</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 12%"></div>
+              </div>
+              <div class="option-votes">
+                <span>341 votos</span>
+                <span>12%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'otro')">
+              <div class="option-text">Otro equipo</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 5%"></div>
+              </div>
+              <div class="option-votes">
+                <span>143 votos</span>
+                <span>5%</span>
+              </div>
+            </div>
+          </div>
+          <div class="debate-actions">
+            <div class="debate-stats">
+              <span>456 comentarios</span>
+              <span>2,845 votos</span>
+            </div>
+            <a href="#" class="join-debate-btn">Unirse al debate</a>
+          </div>
+        </div>
+
+        <div class="debate-card" data-category="trending">
+          <div class="debate-status trending">Trending</div>
+          <div class="debate-header">
+            <div>
+              <h3 class="debate-title">¿El VAR ayuda o perjudica al fútbol?</h3>
+              <div class="debate-meta">
+                <span>Por RefereeMaster</span>
+                <span>•</span>
+                <span>2 junio 2025</span>
+                <span>•</span>
+                <span>1,234 votos</span>
+              </div>
+            </div>
+          </div>
+          <p class="debate-description">
+            El VAR sigue generando controversia en cada jornada. ¿Crees que esta tecnología está mejorando el fútbol o está quitando la esencia del juego?
+          </p>
+          <div class="debate-options">
+            <div class="debate-option" onclick="vote(this, 'ayuda')">
+              <div class="option-text">Ayuda al fútbol</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 62%"></div>
+              </div>
+              <div class="option-votes">
+                <span>765 votos</span>
+                <span>62%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'perjudica')">
+              <div class="option-text">Perjudica al fútbol</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 38%"></div>
+              </div>
+              <div class="option-votes">
+                <span>469 votos</span>
+                <span>38%</span>
+              </div>
+            </div>
+          </div>
+          <div class="debate-actions">
+            <div class="debate-stats">
+              <span>289 comentarios</span>
+              <span>1,234 votos</span>
+            </div>
+            <a href="#" class="join-debate-btn">Unirse al debate</a>
+          </div>
+        </div>
+
+        <div class="debate-card" data-category="recent">
+          <div class="debate-status active">Activo</div>
+          <div class="debate-header">
+            <div>
+              <h3 class="debate-title">¿Quién llegará a las finales de la NBA?</h3>
+              <div class="debate-meta">
+                <span>Por BasketFan</span>
+                <span>•</span>
+                <span>1 junio 2025</span>
+                <span>•</span>
+                <span>567 votos</span>
+              </div>
+            </div>
+          </div>
+          <p class="debate-description">
+            Los playoffs de la NBA están en su punto más emocionante. ¿Qué equipos crees que llegarán a las finales desde cada conferencia?
+          </p>
+          <div class="debate-options">
+            <div class="debate-option" onclick="vote(this, 'celtics-lakers')">
+              <div class="option-text">Celtics vs Lakers</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 35%"></div>
+              </div>
+              <div class="option-votes">
+                <span>198 votos</span>
+                <span>35%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'heat-nuggets')">
+              <div class="option-text">Heat vs Nuggets</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 28%"></div>
+              </div>
+              <div class="option-votes">
+                <span>159 votos</span>
+                <span>28%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'bucks-warriors')">
+              <div class="option-text">Bucks vs Warriors</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 22%"></div>
+              </div>
+              <div class="option-votes">
+                <span>125 votos</span>
+                <span>22%</span>
+              </div>
+            </div>
+            <div class="debate-option" onclick="vote(this, 'otro')">
+              <div class="option-text">Otra combinación</div>
+              <div class="option-progress">
+                <div class="option-progress-fill" style="width: 15%"></div>
+              </div>
+              <div class="option-votes">
+                <span>85 votos</span>
+                <span>15%</span>
+              </div>
+            </div>
+          </div>
+          <div class="debate-actions">
+            <div class="debate-stats">
+              <span>123 comentarios</span>
+              <span>567 votos</span>
+            </div>
+            <a href="#" class="join-debate-btn">Unirse al debate</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Debates Trending</h3>
+        <div class="trending-debates">
+          <div class="trending-item">
+            <div class="trending-content">
+              <h5>¿Messi o Ronaldo?</h5>
+              <p>El debate eterno • 3,456 votos</p>
+            </div>
+          </div>
+          <div class="trending-item">
+            <div class="trending-content">
+              <h5>Mundial 2026 predicciones</h5>
+              <p>Favoritos y sorpresas • 2,234 votos</p>
+            </div>
+          </div>
+          <div class="trending-item">
+            <div class="trending-content">
+              <h5>Mejores apps de apuestas</h5>
+              <p>Experiencias y consejos • 1,789 votos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <h3 class="widget-title">Categorías</h3>
+        <div class="debate-categories">
+          <div class="category-item">
+            <span class="category-name">Fútbol</span>
+            <span class="category-count">45</span>
+          </div>
+          <div class="category-item">
+            <span class="category-name">Baloncesto</span>
+            <span class="category-count">23</span>
+          </div>
+          <div class="category-item">
+            <span class="category-name">Apuestas</span>
+            <span class="category-count">34</span>
+          </div>
+          <div class="category-item">
+            <span class="category-name">Deportes varios</span>
+            <span class="category-count">18</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    let userVotes = {};
+
+    function vote(element, option) {
+      const card = element.closest('.debate-card');
+      const debateTitle = card.querySelector('.debate-title').textContent;
+      
+      if (userVotes[debateTitle]) {
+        alert('Ya has votado en este debate');
+        return;
+      }
+      
+      userVotes[debateTitle] = option;
+      
+      const options = card.querySelectorAll('.debate-option');
+      options.forEach(opt => opt.classList.remove('voted'));
+      element.classList.add('voted');
+      
+      const currentVotes = parseInt(element.querySelector('.option-votes span').textContent);
+      const newVotes = currentVotes + 1;
+      element.querySelector('.option-votes span').textContent = newVotes + ' votos';
+      
+      const totalVotesSpan = card.querySelector('.debate-stats span:last-child');
+      const currentTotal = parseInt(totalVotesSpan.textContent.split(' ')[0]);
+      totalVotesSpan.textContent = (currentTotal + 1) + ' votos';
+      
+      alert('¡Voto registrado con éxito!');
+    }
+
+    function filterDebates(category) {
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.debate-card');
+      
+      tabs.forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

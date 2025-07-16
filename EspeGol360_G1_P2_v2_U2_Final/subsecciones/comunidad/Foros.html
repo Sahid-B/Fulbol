@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Foros - GolESPE 360</title>
+  <link rel="stylesheet" href="../../css/foros.css">
+</head>
+<body>
+   <header>
+        <a href="../../index.html" class="boton-inicio">Inicio</a>
+        <h1>Foros</h1>
+    </header>
+    <div class="forum-container">
+        <main class="forum-main">
+            <div class="forum-header">
+                <h2 class="forum-title">Foros de Discusión</h2>
+                <button class="create-topic-btn" onclick="openModal()">+ Crear Tema</button>
+            </div>
+
+            <div class="forum-categories">
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3 class="category-title">Fútbol Internacional</h3>
+                        <div class="category-stats">
+                            <span class="stats-badge">1,234 temas</span>
+                            <span class="stats-badge">5,678 mensajes</span>
+                        </div>
+                    </div>
+                    <div class="topic-list" id="futbol-topics">
+                        <div class="topic-item">
+                            <div class="topic-info">
+                                <div class="topic-avatar">M</div>
+                                <div class="topic-details">
+                                    <h4>¿Quién ganará la Champions League?</h4>
+                                    <div class="topic-meta">por MiguelF • hace 2 horas</div>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span>23 respuestas</span>
+                                <span>156 vistas</span>
+                            </div>
+                        </div>
+                        <div class="topic-item">
+                            <div class="topic-info">
+                                <div class="topic-avatar">A</div>
+                                <div class="topic-details">
+                                    <h4>Análisis del último partido del Real Madrid</h4>
+                                    <div class="topic-meta">por AnaG • hace 4 horas</div>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span>45 respuestas</span>
+                                <span>289 vistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3 class="category-title">Baloncesto</h3>
+                        <div class="category-stats">
+                            <span class="stats-badge">567 temas</span>
+                            <span class="stats-badge">2,345 mensajes</span>
+                        </div>
+                    </div>
+                    <div class="topic-list" id="baloncesto-topics">
+                        <div class="topic-item">
+                            <div class="topic-info">
+                                <div class="topic-avatar">C</div>
+                                <div class="topic-details">
+                                    <h4>NBA Finals: Predicciones y análisis</h4>
+                                    <div class="topic-meta">por CarlosR • hace 1 hora</div>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span>12 respuestas</span>
+                                <span>78 vistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-header">
+                        <h3 class="category-title">Apuestas y Pronósticos</h3>
+                        <div class="category-stats">
+                            <span class="stats-badge">890 temas</span>
+                            <span class="stats-badge">3,456 mensajes</span>
+                        </div>
+                    </div>
+                    <div class="topic-list" id="apuestas-topics">
+                        <div class="topic-item">
+                            <div class="topic-info">
+                                <div class="topic-avatar">L</div>
+                                <div class="topic-details">
+                                    <h4>Mejores cuotas para el fin de semana</h4>
+                                    <div class="topic-meta">por LucasP • hace 30 min</div>
+                                </div>
+                            </div>
+                            <div class="topic-stats">
+                                <span>8 respuestas</span>
+                                <span>45 vistas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Usuarios Online</h3>
+                <div class="online-users">
+                    <span class="user-badge">MiguelF</span>
+                    <span class="user-badge">AnaG</span>
+                    <span class="user-badge">CarlosR</span>
+                    <span class="user-badge">LucasP</span>
+                    <span class="user-badge">+12 más</span>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Actividad Reciente</h3>
+                <div class="recent-activity">
+                    <div class="activity-item">
+                        <div class="activity-avatar">M</div>
+                        <div class="activity-content">
+                            <h5>MiguelF</h5>
+                            <p>Respondió en "Champions League"</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">A</div>
+                        <div class="activity-content">
+                            <h5>AnaG</h5>
+                            <p>Creó un nuevo tema</p>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-avatar">C</div>
+                        <div class="activity-content">
+                            <h5>CarlosR</h5>
+                            <p>Votó en una encuesta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3 class="widget-title">Top Usuarios</h3>
+                <div class="leaderboard">
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar">D</div>
+                            <span>DiegoM</span>
+                        </div>
+                        <div class="leaderboard-points">2,450 pts</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar">S</div>
+                            <span>SofiaL</span>
+                        </div>
+                        <div class="leaderboard-points">1,890 pts</div>
+                    </div>
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar">J</div>
+                            <span>JavierT</span>
+                        </div>
+                        <div class="leaderboard-points">1,675 pts</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Crear Nuevo Tema</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            
+            <form id="createTopicForm">
+                <div class="form-group">
+                    <label class="form-label" for="topicTitle">Título del Tema</label>
+                    <input type="text" id="topicTitle" class="form-input" placeholder="Escribe el título de tu tema" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="topicCategory">Categoría</label>
+                    <select id="topicCategory" class="form-select" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="futbol">Fútbol Internacional</option>
+                        <option value="baloncesto">Baloncesto</option>
+                        <option value="apuestas">Apuestas y Pronósticos</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="topicContent">Contenido</label>
+                    <textarea id="topicContent" class="form-textarea" placeholder="Describe tu tema o pregunta..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="authorName">Tu Nombre</label>
+                    <input type="text" id="authorName" class="form-input" placeholder="Escribe tu nombre" required>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Crear Tema</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+            document.getElementById('createTopicForm').reset();
+        }
+
+        document.getElementById('modalOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.getElementById('createTopicForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('topicTitle').value;
+            const category = document.getElementById('topicCategory').value;
+            const content = document.getElementById('topicContent').value;
+            const author = document.getElementById('authorName').value;
+            
+            const newTopic = createTopicElement(title, author, category);
+            
+            const categoryMap = {
+                'futbol': 'futbol-topics',
+                'baloncesto': 'baloncesto-topics',
+                'apuestas': 'apuestas-topics'
+            };
+            
+            const topicList = document.getElementById(categoryMap[category]);
+            topicList.insertBefore(newTopic, topicList.firstChild);
+            
+            closeModal();
+            
+            alert('¡Tema creado exitosamente!');
+        });
+
+        function createTopicElement(title, author, category) {
+            const topicItem = document.createElement('div');
+            topicItem.className = 'topic-item';
+            
+            const authorInitial = author.charAt(0).toUpperCase();
+            const timeAgo = 'hace unos segundos';
+            
+            topicItem.innerHTML = `
+                <div class="topic-info">
+                    <div class="topic-avatar">${authorInitial}</div>
+                    <div class="topic-details">
+                        <h4>${title}</h4>
+                        <div class="topic-meta">por ${author} • ${timeAgo}</div>
+                    </div>
+                </div>
+                <div class="topic-stats">
+                    <span>0 respuestas</span>
+                    <span>1 vista</span>
+                </div>
+            `;
+            
+            return topicItem;
+        }
+    </script>
+   
+</body>
+</html>

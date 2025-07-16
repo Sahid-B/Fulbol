@@ -1,0 +1,1186 @@
+:root {
+            --primary: #1a3e8c;
+            --secondary: #d62b1f;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --text: #1e293b;
+            --gray: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text);
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .balance {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .balance i {
+            margin-right: 5px;
+            color: var(--accent);
+        }
+        
+        .btn-login {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Navegación */
+        .nav-tabs {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 68px;
+            z-index: 999;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .tabs {
+            display: flex;
+            list-style: none;
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 0;
+        }
+        
+        .tab {
+            padding: 15px 20px;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .tab.active {
+            color: var(--primary);
+            border-bottom-color: var(--primary);
+        }
+        
+        .tab:hover {
+            color: var(--primary);
+        }
+        
+        /* Contenido principal */
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 20px;
+        }
+        
+        /* Mercados de apuestas */
+        .markets-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+        
+        .market-header {
+            padding: 15px;
+            background: var(--light);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .market-title {
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .liga-logo {
+            height: 30px;
+        }
+        
+        .event-count {
+            background: var(--primary);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+        
+        .event-list {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .event-item {
+            padding: 15px;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .event-item:hover {
+            background: rgba(26, 62, 140, 0.03);
+        }
+        
+        .event-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 40%;
+        }
+        
+        .team-home {
+            justify-content: flex-end;
+        }
+        
+        .team-away {
+            justify-content: flex-start;
+        }
+        
+        .team-logo {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            padding: 2px;
+        }
+        
+        .team-name {
+            font-weight: 500;
+        }
+        
+        .event-vs {
+            width: 20%;
+            text-align: center;
+            font-weight: 600;
+            color: var(--gray);
+        }
+        
+        .event-time {
+            font-size: 12px;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        /* Mercados de apuestas */
+        .market-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .market-title-small {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 10px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .odd {
+            background: var(--light);
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .odd:hover {
+            background: rgba(26, 62, 140, 0.1);
+        }
+        
+        .odd.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .odd-type {
+            font-size: 12px;
+            color: var(--gray);
+            margin-bottom: 3px;
+        }
+        
+        .odd.active .odd-type {
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .odd-value {
+            font-weight: 600;
+        }
+        
+        /* Más mercados */
+        .more-markets {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .market-btn {
+            background: var(--light);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 5px 12px;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .market-btn:hover {
+            background: rgba(26, 62, 140, 0.1);
+            border-color: var(--primary);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .bet-slip {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 15px;
+        }
+        
+        .bet-slip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .bet-slip-title {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .bet-slip-count {
+            background: var(--primary);
+            color: white;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        
+        .empty-slip {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--gray);
+        }
+        
+        .empty-slip i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: var(--border);
+        }
+        
+        /* Promociones */
+        .promo-banner {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .promo-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .promo-text {
+            font-size: 14px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        
+        .btn-promo {
+            background: white;
+            color: var(--primary);
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-promo:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* Clasificación */
+        .clasificacion {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 15px;
+            margin-top: 20px;
+        }
+        
+        .clasificacion-header {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .clasificacion-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .clasificacion-table th {
+            text-align: left;
+            padding: 8px 5px;
+            font-weight: 500;
+            color: var(--gray);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .clasificacion-table td {
+            padding: 8px 5px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .clasificacion-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .clasificacion-table .pos {
+            font-weight: 600;
+            width: 20px;
+        }
+        
+        .clasificacion-table .equipo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .clasificacion-table .equipo-logo {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            background-color: #f0f0f0;
+            border-radius: 50%;
+            padding: 2px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 18px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* Estilos para el modal de login */
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.modal-content.active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    background: rgba(0,0,0,0.2);
+    transform: rotate(90deg);
+}
+
+.modal-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.modal-tab.active {
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+/* Formulario de login */
+.login-form .form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26, 62, 140, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #122c6e;
+}
+
+/* Estilos para la tarjeta 3D */
+.recarga-section {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.recarga-section.active {
+    display: block;
+}
+
+.recarga-container {
+    margin-top: 20px;
+}
+
+.tarjeta3d {
+    background: linear-gradient(135deg, #4e73df 60%, #1cc88a 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    height: 180px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.tarjeta3d.input-activo {
+    transform: rotateY(10deg);
+}
+
+.chip3d {
+    width: 50px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.numero3d {
+    font-size: 22px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-family: monospace;
+}
+
+.datos3d {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.datos3d div div:last-child {
+    font-size: 14px;
+    margin-top: 5px;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.logo3d {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.saldo-usuario {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.btn-recharge {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-recharge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+.btn-recharge:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-recharge i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.btn-recharge:hover i {
+    transform: scale(1.1);
+}
+
+/* Efecto de brillo al pasar el mouse */
+.btn-recharge::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    pointer-events: none;
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.btn-recharge:hover::after {
+    opacity: 1;
+    left: 100%;
+    top: 100%;
+}
+
+/* Animación de pulso cuando hay saldo bajo */
+.balance-low + .btn-recharge {
+    animation: pulse 2s infinite;
+}
+
+.boton-inicio {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+            z-index: 1001;
+        }
+        
+        .boton-inicio:hover {
+            background: #122c6e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .boton-inicio i {
+            font-size: 14px;
+        }
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+}
+/* ==================== */
+/* ESTILOS BASE - MOBILE FIRST */
+/* ==================== */
+
+/* Variables CSS reutilizables */
+:root {
+  --primary: #1a3e8c;       /* Azul principal */
+  --secondary: #d62b1f;     /* Rojo secundario */
+  --accent: #10b981;        /* Verde de acento */
+  --dark: #0f172a;          /* Fondo oscuro */
+  --light: #f8fafc;         /* Fondo claro */
+  --text: #1e293b;          /* Color de texto principal */
+  --gray: #64748b;          /* Texto secundario */
+  --border: #e2e8f0;        /* Color de bordes */
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estructura principal */
+body {
+  background-color: #f5f5f5;
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ==================== */
+/* BOTÓN CON EFECTO DE RESPIRAR */
+/* ==================== */
+
+.boton-inicio {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background: var(--primary);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.3s;
+  z-index: 1001;
+  /* Efecto base para todos los dispositivos */
+  animation: respirar 3s infinite ease-in-out;
+}
+
+.boton-inicio:hover {
+  background: #122c6e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.boton-inicio i {
+  font-size: 14px;
+}
+
+@keyframes respirar {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 86, 179, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.6);
+  }
+}
+
+/* ==================== */
+/* AJUSTES RESPONSIVOS */
+/* ==================== */
+
+/* MÓVIL (0-500px) */
+/* ==================== */
+/* MEDIA QUERIES PARA MÓVILES PEQUEÑOS (0-500px) */
+/* ==================== */
+@media (max-width: 500px) {
+  /* Ajustes generales */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Header */
+  .header {
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 10px;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  
+  .user-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .balance, .btn-login {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  /* Navegación */
+  .nav-tabs {
+    position: relative;
+    top: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tabs {
+    padding: 0 10px;
+  }
+  
+  .tab {
+    padding: 12px 15px;
+    font-size: 0.8rem;
+  }
+  
+  /* Contenido principal */
+  .main-container {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+    gap: 15px;
+  }
+  
+  /* Mercados de apuestas */
+  .markets-container {
+    margin-bottom: 15px;
+  }
+  
+  .market-header {
+    padding: 10px;
+  }
+  
+  .market-title {
+    font-size: 0.9rem;
+  }
+  
+  .liga-logo {
+    height: 25px;
+  }
+  
+  .event-item {
+    padding: 10px;
+  }
+  
+  .team-logo {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .team-name {
+    font-size: 0.8rem;
+  }
+  
+  .event-vs {
+    font-size: 0.7rem;
+  }
+  
+  .event-time {
+    font-size: 0.7rem;
+  }
+  
+  /* Mercados de apuestas */
+  .market-options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+  
+  .odd {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+  
+  .odd-type {
+    font-size: 0.6rem;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    gap: 15px;
+  }
+  
+  .bet-slip, .promo-banner, .clasificacion {
+    padding: 12px;
+  }
+  
+  /* Promociones */
+  .promo-title {
+    font-size: 1rem;
+  }
+  
+  .promo-text {
+    font-size: 0.8rem;
+  }
+  
+  .btn-promo {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+  
+  /* Clasificación */
+  .clasificacion-table {
+    font-size: 0.7rem;
+  }
+  
+  .clasificacion-table th, 
+  .clasificacion-table td {
+    padding: 5px 3px;
+  }
+  
+  .equipo-logo {
+    width: 15px;
+    height: 15px;
+  }
+  
+  /* Footer */
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .footer-section h4 {
+    font-size: 0.9rem;
+  }
+  
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+  
+  .social-links {
+    gap: 10px;
+  }
+  
+  /* Modal de login */
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .modal-tab {
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+  
+  .login-form input {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-submit {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Tarjeta 3D */
+  .tarjeta3d {
+    height: 150px;
+    padding: 15px;
+  }
+  
+  .numero3d {
+    font-size: 1rem;
+  }
+  
+  /* Botón de inicio */
+  .boton-inicio {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 10px auto;
+    display: block;
+    width: max-content;
+    animation: respirarMovil 3s infinite ease-in-out;
+  }
+  
+  @keyframes respirarMovil {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 86, 179, 0.2);
+    }
+    50% {
+      transform: scale(1.03);
+      box-shadow: 0 0 5px rgba(0, 86, 179, 0.4);
+    }
+  }
+}
+
+/* TABLET (501-900px) */
+@media (min-width: 501px) and (max-width: 900px) {
+  .boton-inicio {
+    /* Efecto intermedio para tablet */
+    animation: respirarTablet 3s infinite ease-in-out;
+  }
+
+  @keyframes respirarTablet {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 rgba(0, 86, 179, 0.3);
+    }
+    50% {
+      transform: scale(1.04);
+      box-shadow: 0 0 8px rgba(0, 86, 179, 0.5);
+    }
+  }
+}
+
+/* ESCRITORIO (901px+) */
+@media (min-width: 901px) {
+  .boton-inicio {
+    /* Efecto completo en desktop */
+    animation: respirarDesktop 3s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  }
+
+  @keyframes respirarDesktop {
+    0%, 100% {
+      transform: scale(1) translateY(0);
+      box-shadow: 0 0 0 rgba(0, 86, 179, 0.4);
+    }
+    50% {
+      transform: scale(1.06) translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 86, 179, 0.7);
+    }
+  }
+  
+  /* Efecto hover mejorado solo en desktop */
+  .boton-inicio:hover {
+    animation: none; /* Detiene la animación al hacer hover */
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 86, 179, 0.8);
+  }
+}

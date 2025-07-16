@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Equipos del Mundial de Clubes - GolESPE 360</title>
+  <style>
+    :root {
+      --primary: #1a3e8c;
+      --secondary: #d62b1f;
+      --accent: #fad400;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --text: #1e293b;
+      --gray: #64748b;
+      --border: #e2e8f0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f3f3f3;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      padding: 10px 0;
+      font-size: 28px;
+    }
+
+    .boton-inicio {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: var(--dark);
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(255, 242, 63, 0.5);
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .boton-inicio:hover {
+      background-color: #d6a400;
+      box-shadow: 0 0 20px rgba(230, 215, 0, 0.993), 0 0 30px rgba(247, 224, 19, 0.5);
+      transform: scale(1.05);
+    }
+
+    .equipos-contenedor {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin: 30px;
+      padding: 20px;
+    }
+
+    .equipo-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+    }
+
+    .equipo-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .equipo-imagen {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .equipo-info {
+      padding: 20px;
+    }
+
+    .equipo-info h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 22px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 10px;
+    }
+
+    .equipo-dato {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .equipo-dato i {
+      color: var(--primary);
+      width: 20px;
+      text-align: center;
+    }
+
+    .pais-flag {
+      width: 20px;
+      height: 15px;
+      object-fit: cover;
+      border-radius: 2px;
+      margin-right: 5px;
+    }
+
+    .partidos-title {
+      margin: 30px 30px 10px;
+      padding-left: 20px;
+      font-size: 24px;
+      color: var(--primary);
+      border-left: 5px solid var(--accent);
+    }
+
+    .partidos-container {
+      margin: 0 30px 50px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .partido {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .partido:last-child {
+      border-bottom: none;
+    }
+
+    .partido-fecha {
+      grid-column: span 3;
+      background: var(--light);
+      padding: 8px 20px;
+      font-weight: bold;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .partido-fecha i {
+      color: var(--primary);
+    }
+
+    .partido-equipo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+    }
+
+    .partido-equipo img {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    .partido-resultado {
+      font-weight: bold;
+      text-align: center;
+      padding: 0 15px;
+      background: var(--light);
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    .partido-etapa {
+      grid-column: span 3;
+      background: var(--primary);
+      color: white;
+      padding: 8px 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .equipos-contenedor {
+        grid-template-columns: 1fr;
+        margin: 15px;
+      }
+      
+      .partidos-container {
+        margin: 0 15px 30px;
+      }
+      
+      .partido {
+        grid-template-columns: 1fr auto 1fr;
+        font-size: 14px;
+      }
+      
+      .partido-equipo img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../../index.html" class="boton-inicio">
+      <i class="fas fa-arrow-left"></i> Inicio
+    </a>
+    <h1>Equipos del Mundial de Clubes 2025</h1>
+  </header>
+  
+  <main>
+    <div class="equipos-contenedor">
+      <!-- Equipo 1 -->
+      <article class="equipo-card">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/86.png" alt="Real Madrid" class="equipo-imagen">
+        <div class="equipo-info">
+          <h2>Real Madrid CF</h2>
+          <div class="equipo-dato">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ciudad: Madrid, España</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-stadium"></i>
+            <span>Estadio: Santiago Bernabéu</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-flag"></i>
+           
+            <span>Liga: LaLiga Santander</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-trophy"></i>
+            <span>Títulos Champions: 14</span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Equipo 2 -->
+      <article class="equipo-card">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/83.png" alt="Barcelona" class="equipo-imagen">
+        <div class="equipo-info">
+          <h2>FC Barcelona</h2>
+          <div class="equipo-dato">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ciudad: Barcelona, España</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-stadium"></i>
+            <span>Estadio: Spotify Camp Nou</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-flag"></i>
+           
+            <span>Liga: LaLiga Santander</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-trophy"></i>
+            <span>Títulos Champions: 5</span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Equipo 3 -->
+      <article class="equipo-card">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1068.png" alt="Atlético Madrid" class="equipo-imagen">
+        <div class="equipo-info">
+          <h2>Atlético Madrid</h2>
+          <div class="equipo-dato">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ciudad: Madrid, España</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-stadium"></i>
+            <span>Estadio: Cívitas Metropolitano</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-flag"></i>
+          
+            <span>Liga: LaLiga Santander</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-trophy"></i>
+            <span>Títulos Champions: 0</span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Equipo 4 -->
+      <article class="equipo-card">
+        <img src="https://logos-world.net/wp-content/uploads/2020/06/PSG-Logo.png" alt="Paris Saint-Germain" class="equipo-imagen">
+        <div class="equipo-info">
+          <h2>Paris Saint-Germain</h2>
+          <div class="equipo-dato">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ciudad: París, Francia</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-stadium"></i>
+            <span>Estadio: Parc des Princes</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-flag"></i>
+           
+            <span>Liga: Ligue 1</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-trophy"></i>
+            <span>Títulos Champions: 0</span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Equipo 5 -->
+      <article class="equipo-card">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/363.png" alt="Chelsea" class="equipo-imagen">
+        <div class="equipo-info">
+          <h2>Chelsea FC</h2>
+          <div class="equipo-dato">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ciudad: Londres, Inglaterra</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-stadium"></i>
+            <span>Estadio: Stamford Bridge</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-flag"></i>
+           
+            <span>Liga: Premier League</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-trophy"></i>
+            <span>Títulos Champions: 2</span>
+          </div>
+        </div>
+      </article>
+      
+      <!-- Equipo 6 -->
+      <article class="equipo-card">
+        <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png" alt="Manchester City" class="equipo-imagen">
+        <div class="equipo-info">
+          <h2>Manchester City</h2>
+          <div class="equipo-dato">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Ciudad: Manchester, Inglaterra</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-stadium"></i>
+            <span>Estadio: Etihad Stadium</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-flag"></i>
+            
+            <span>Liga: Premier League</span>
+          </div>
+          <div class="equipo-dato">
+            <i class="fas fa-trophy"></i>
+            <span>Títulos Champions: 1</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    
+    <h2 class="partidos-title">
+      <i class="fas fa-calendar-alt"></i> Partidos del Mundial de Clubes
+    </h2>
+    
+    <div class="partidos-container">
+      <!-- Fase de grupos -->
+      <div class="partido-fecha">
+        <i class="fas fa-calendar-day"></i> Sábado, 31 de mayo
+      </div>
+      <div class="partido">
+        <div class="partido-equipo">
+          <img src="https://cdnlogo.com/logos/l/31/los-angeles-fc.png" alt="LAFC">
+          <span>LAFC</span>
+        </div>
+        <div class="partido-resultado">2-1</div>
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/227.png" alt="América">
+          <span>América</span>
+        </div>
+      </div>
+      
+      <!-- Octavos de final -->
+      <div class="partido-etapa">Octavos de final</div>
+      <div class="partido-fecha">
+        <i class="fas fa-calendar-day"></i> Sábado, 28 de junio
+      </div>
+      <div class="partido">
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png" alt="Palmeiras">
+          <span>Palmeiras</span>
+        </div>
+        <div class="partido-resultado">1-0</div>
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2026.png" alt="Botafogo">
+          <span>Botafogo</span>
+        </div>
+      </div>
+      
+      <!-- Cuartos de final -->
+      <div class="partido-etapa">Cuartos de final</div>
+      <div class="partido-fecha">
+        <i class="fas fa-calendar-day"></i> Viernes, 4 de julio
+      </div>
+      <div class="partido">
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2028.png" alt="Fluminense">
+          <span>Fluminense</span>
+        </div>
+        <div class="partido-resultado">2-1</div>
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/136.png" alt="Al Hilal">
+          <span>Al Hilal</span>
+        </div>
+      </div>
+      
+      <!-- Semifinales -->
+      <div class="partido-etapa">Semifinales</div>
+      <div class="partido-fecha">
+        <i class="fas fa-calendar-day"></i> Miércoles, 9 de julio
+      </div>
+      <div class="partido">
+        <div class="partido-equipo">
+          <img src="https://logos-world.net/wp-content/uploads/2020/06/PSG-Logo.png" alt="PSG">
+          <span>Paris Saint-Germain</span>
+        </div>
+        <div class="partido-resultado">4-0</div>
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/86.png" alt="Real Madrid">
+          <span>Real Madrid</span>
+        </div>
+      </div>
+      
+      <!-- Final -->
+      <div class="partido-etapa">Final</div>
+      <div class="partido-fecha">
+        <i class="fas fa-calendar-day"></i> Sábado, 12 de julio
+      </div>
+      <div class="partido">
+        <div class="partido-equipo">
+          <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/363.png" alt="Chelsea">
+          <span>Chelsea</span>
+        </div>
+        <div class="partido-resultado">-</div>
+        <div class="partido-equipo">
+          <img src="https://logos-world.net/wp-content/uploads/2020/06/PSG-Logo.png" alt="PSG">
+          <span>Paris Saint-Germain</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Font Awesome para los iconos -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

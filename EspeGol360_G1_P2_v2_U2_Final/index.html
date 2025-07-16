@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GolESPE 360 - Mundial de Clubes 2025</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+      <!-- Pantalla de carga -->
+    <div class="pagina-carga" id="paginaCarga">
+        <div class="bola"></div>
+        <div class="gol-text">GOOOOOOOOOOL!!!</div>
+        <div class="celebracion">
+            <div class="particula"></div>
+            <div class="particula"></div>
+            <div class="particula"></div>
+            <div class="particula"></div>
+            <div class="particula"></div>
+            <div class="particula"></div>
+        </div>
+    </div>
+
+
+    <!-- Audio para la animación -->
+<audio id="golAudio" preload="auto">
+    <source src="recording.mp3" type="audio/mp3">
+    
+    
+</audio>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">GolESPE 360</div>
+            <div class="header-actions">
+                <input type="search" class="search-bar" placeholder="Buscar noticias, equipos, jugadores...">
+                <div class="live-indicator">🔴 EN VIVO</div>
+                <div class="login-btn" id="loginBtn">👤 Login</div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                        <span class="nav-icon"></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Noticias</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="subsecciones/noticias/ultimasNoticias.html" class="dropdown-item">Últimas Noticias</a>
+                        <a href="subsecciones/noticias/analisis.html" class="dropdown-item">Análisis</a>
+                        <a href="subsecciones/noticias/entrevistas.html" class="dropdown-item">Entrevistas</a>
+                    </div>
+                </li>
+
+<!-- Aqui esta el error para que lo arrgelen -->
+
+<li class="nav-item">
+    <a href="#" class="nav-link">
+        <span class="nav-icon"></span>
+        <span>Liga</span>
+    </a>
+    <div class="dropdown">
+        <a href="subsecciones/liga/clasificacion.html" class="dropdown-item">Clasificación</a>
+        <a href="subsecciones/liga/Equipos.html" class="dropdown-item">Equipos</a>
+        <a href="subsecciones/liga/estadisticas.html" class="dropdown-item">Estadísticas</a>
+        <a href="subsecciones/liga/jugadores.html" class="dropdown-item">Jugadores</a>
+    </div>
+</li>
+
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Partidos</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="subsecciones/partidos/proximos.html" class="dropdown-item">Próximos Partidos</a>
+                        <a href="subsecciones/partidos/resultados.html" class="dropdown-item">Resultados</a>
+                        <a href="subsecciones/partidos/envivo.html" class="dropdown-item">En Vivo</a>
+                        <a href="subsecciones/partidos/calendario.html" class="dropdown-item">Calendario</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Apuestas</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="subsecciones/apuestas/Simulador.html" class="dropdown-item">Simulador</a>
+                        <a href="subsecciones/apuestas/cuotas.html" class="dropdown-item">Cuotas</a>
+                        <a href="subsecciones/apuestas/Tips.html" class="dropdown-item">Tips</a>
+                        <a href="subsecciones/apuestas/Comparador.html" class="dropdown-item">Comparador</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Comunidad</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="subsecciones/comunidad/Foros.html" class="dropdown-item">Foros</a>
+                        <a href="subsecciones/comunidad/Debates.html" class="dropdown-item">Debates</a>
+                        <a href="subsecciones/comunidad/Perfiles.html" class="dropdown-item">Perfiles</a>
+                        <a href="subsecciones/comunidad/Ranking.html" class="dropdown-item">Rankings</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-container">
+        
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Mundial de Clubes FIFA 2025</h1>
+                <p class="hero-subtitle">Sigue toda la cobertura del torneo más importante de clubes del mundo. Partidos en vivo, resultados, estadísticas y análisis exclusivos.</p>
+                <div style="display: flex; gap: 1rem; margin-top: 2rem;">
+                    <a href="#noticias" class="btn btn-primary">Ver Noticias</a>
+                    <a href="#partidos" class="btn btn-secondary">Próximos Partidos</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="noticias" class="news-grid">
+            <div class="main-news">
+                <div class="news-image">
+                    <img src="images/chvspsg.jpg" alt="Final Mundial de Clubes 2025">
+                </div>
+                <div class="news-content">
+                    <h2 class="news-title">Final Mundial de Clubes: Chelsea vs PSG</h2>
+                    <p class="news-excerpt">
+                        El Chelsea y el Paris Saint-Germain se enfrentarán mañana en la gran final del Mundial de Clubes 2025. 
+                        El PSG llega tras una contundente victoria 4-0 sobre el Real Madrid, mientras que el Chelsea venció 2-0 al Fluminense.
+                        Ambos equipos llegan en su mejor momento de forma, prometiendo un espectáculo inolvidable en el Estadio Maracaná.
+                    </p>
+                    
+                    <div class="news-image-container">
+                        <img src="images/jugadpres2.jpeg" alt="Equipo del Chelsea celebrando">
+                        <img src="images/otro.jpeg" alt="Equipo del PSG en semifinales">
+                    </div>
+                    
+                    <div class="news-meta">
+                        <span>📅 Hace 3 horas</span>
+                        <span>👤 Redacción Internacional</span>
+                        <span>🔥 2.4K visualizaciones</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar">
+                <div class="widget">
+                    <h3 class="widget-title">Últimos Resultados</h3>
+                    <div class="live-score">
+                        <span>PSG</span>
+                        <span class="score">4-0</span>
+                        <span>Real Madrid</span>
+                    </div>
+                    <div class="live-score">
+                        <span>Chelsea</span>
+                        <span class="score">2-0</span>
+                        <span>Fluminense</span>
+                    </div>
+                    <div class="live-score">
+                        <span>Al Hilal</span>
+                        <span class="score">4-3</span>
+                        <span>Man City</span>
+                    </div>
+                    <div class="live-score">
+                        <span>Bayern</span>
+                        <span class="score">2-1</span>
+                        <span>Boca Juniors</span>
+                    </div>
+                </div>
+                
+                <div class="widget">
+                    <h3 class="widget-title">Estadísticas del Torneo</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Goles totales:</span>
+                            <span style="font-weight: bold; color: var(--accent-green);">98</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Promedio goles/partido:</span>
+                            <span style="font-weight: bold; color: var(--accent-green);">3.2</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Partidos jugados:</span>
+                            <span style="font-weight: bold; color: var(--accent-green);">31</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <span>Récord de asistencia:</span>
+                            <span style="font-weight: bold; color: var(--accent-green);">78,523</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="widget">
+                    <h3 class="widget-title">Tendencias</h3>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div style="padding: 0.5rem; background: var(--light-gray); border-radius: 8px;">
+                            <strong>Mbappé</strong> - 8 goles en el torneo
+                        </div>
+                        <div style="padding: 0.5rem; background: var(--light-gray); border-radius: 8px;">
+                            <strong>PSG</strong> - Favorito para la final
+                        </div>
+                        <div style="padding: 0.5rem; background: var(--light-gray); border-radius: 8px;">
+                            <strong>Final</strong> - Chelsea vs PSG
+                        </div>
+                        <div style="padding: 0.5rem; background: var(--light-gray); border-radius: 8px;">
+                            <strong>Maracaná</strong> - Estadio listo para la final
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="partidos" class="table-container">
+            <div class="section-title">Próximos Partidos - Mundial de Clubes</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Partido</th>
+                        <th>Estadio</th>
+                        <th>Hora</th>
+                        <th>TV</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13 Jul</td>
+                        <td><strong>Chelsea vs Paris Saint-Germain</strong> (Final)</td>
+                        <td>Estadio Maracaná</td>
+                        <td>14:00</td>
+                        <td>ESPN, Fox Sports</td>
+                    </tr>
+                    <tr>
+                        <td>15 Jul</td>
+                        <td>Fluminense vs Al Hilal (3er puesto)</td>
+                        <td>Estadio Mineirão</td>
+                        <td>12:00</td>
+                        <td>ESPN 2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="clasificacion" class="table-container">
+            <div class="section-title">Cuadro Final - Mundial de Clubes</div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Equipo</th>
+                        <th>PJ</th>
+                        <th>PG</th>
+                        <th>PE</th>
+                        <th>PP</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1-2</td>
+                        <td><strong>Chelsea / PSG</strong></td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>+9</td>
+                    </tr>
+                    <tr>
+                        <td>3-4</td>
+                        <td><strong>Fluminense / Al Hilal</strong></td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td>+4</td>
+                    </tr>
+                    <tr>
+                        <td>5-8</td>
+                        <td>Real Madrid, Borussia Dortmund, Bayern, Man City</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>8</td>
+                        <td>5</td>
+                        <td>+3</td>
+                    </tr>
+                    <tr>
+                        <td>9-16</td>
+                        <td>Boca Juniors, Benfica, Inter Miami, Palmeiras, etc.</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>+1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>GolESPE 360</h3>
+                <p>El portal más completo sobre fútbol internacional, con especial cobertura del Mundial de Clubes FIFA 2025.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Noticias</a></li>
+                    <li><a href="#">Mundial de Clubes</a></li>
+                    <li><a href="#">Partidos</a></li>
+                    <li><a href="#">Apuestas</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Publicidad</a></li>
+                    <li><a href="#">Trabaja con Nosotros</a></li>
+                    <li><a href="#">Aviso Legal</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GolESPE 360. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="modal-loader"></div>
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 class="modal-title">Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Usuario</label>
+                    <input type="text" id="username" required placeholder="Ingresa tu usuario">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required placeholder="Ingresa tu contraseña">
+                </div>
+                <button type="submit" class="submit-btn">Ingresar</button>
+                <div style="text-align: center; margin-top: 1rem;">
+                    <a href="#" style="color: var(--text-light); font-size: 0.9rem;">¿Olvidaste tu contraseña?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   <script>
+ const loginBtn = document.getElementById('loginBtn');
+const closeModal = document.getElementById('closeModal');
+const loginModal = document.getElementById('loginModal');
+const loginForm = document.getElementById('loginForm');
+
+// Audio para la animación de carga
+const golAudio = new Audio('recording.mp3');
+golAudio.volume = 0.7;
+
+// Función para manejar la interacción del usuario
+function handleUserInteraction() {
+    // Eliminar event listeners después de la primera interacción
+    document.removeEventListener('click', handleUserInteraction);
+    document.removeEventListener('keydown', handleUserInteraction);
+    
+    // Intentar reproducir el audio cuando el usuario interactúa
+    try {
+        const playPromise = golAudio.play();
+        
+        if (playPromise !== undefined) {
+            playPromise.catch(error => {
+                console.log("Error al reproducir audio:", error);
+            });
+        }
+    } catch (error) {
+        console.log("Error al intentar reproducir audio:", error);
+    }
+}
+
+// Esperar a que todo el contenido esté cargado
+window.addEventListener('load', function() {
+    // Verificar si es la primera vez que se carga la página
+    const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore');
+    
+    if (!hasLoadedBefore) {
+        // Es la primera vez, mostrar la animación de carga
+        const paginaCarga = document.getElementById('paginaCarga');
+        paginaCarga.style.display = 'flex';
+        
+        // Agregar event listeners para la primera interacción
+        document.addEventListener('click', handleUserInteraction);
+        document.addEventListener('keydown', handleUserInteraction);
+        
+        // Ocultar la pantalla de carga después de 4 segundos
+        setTimeout(() => {
+            paginaCarga.classList.add('oculto');
+            
+            // Remover el elemento después de la transición
+            paginaCarga.addEventListener('transitionend', function() {
+                paginaCarga.style.display = 'none';
+                // Pausar el audio cuando la animación termina
+                golAudio.pause();
+                golAudio.currentTime = 0;
+            });
+        }, 4000);
+        
+        // Marcar que ya se cargó la página
+        sessionStorage.setItem('hasLoadedBefore', 'true');
+    } else {
+        // Ya se cargó antes, ocultar la animación inmediatamente
+        const paginaCarga = document.getElementById('paginaCarga');
+        if (paginaCarga) {
+            paginaCarga.style.display = 'none';
+        }
+    }
+});
+
+// Resto del código para el modal de login...
+loginBtn.addEventListener('click', () => {
+    // Aplicar blur al contenido principal
+    const mainContent = document.querySelector('main') || document.querySelector('.container') || document.body;
+    mainContent.style.filter = 'blur(5px)';
+    mainContent.style.transition = 'filter 0.3s ease';
+    
+    document.body.classList.add('modal-open');
+    loginModal.classList.add('active');
+    loginModal.style.display = 'flex';
+    
+    setTimeout(() => {
+        const modalContent = document.querySelector('.modal-content');
+        modalContent.style.display = 'block';
+    }, 1000);
+});
+
+closeModal.addEventListener('click', () => {
+    closeLoginModal();
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === loginModal) {
+        closeLoginModal();
+    }
+});
+
+function closeLoginModal() {
+    // Remover blur del contenido principal
+    const mainContent = document.querySelector('main') || document.querySelector('.container') || document.body;
+    mainContent.style.filter = 'none';
+    
+    document.body.classList.remove('modal-open');
+    loginModal.classList.remove('active');
+    const modalContent = document.querySelector('.modal-content');
+    modalContent.style.display = 'none';
+    setTimeout(() => {
+        loginModal.style.display = 'none';
+    }, 300);
+}
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    if (username === 'admin' && password === 'admin') {
+        alert('Inicio de sesión exitoso! Bienvenido, administrador.');
+        closeLoginModal();
+    } else {
+        alert('Usuario o contraseña incorrectos. Intenta con admin/admin');
+    }
+});
+</script>
+</body>
+</html>

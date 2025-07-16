@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa Mundial de Clubes FIFA 2025 | Estadísticas | GolESPE 360</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/clasificacion.css">
+    <style>
+        .tabla-posiciones {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+        }
+
+        .tabla-posiciones thead {
+            background-color: #2a9d8f;
+            color: #fff;
+        }
+
+        .tabla-posiciones th, .tabla-posiciones td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tabla-posiciones th {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .tabla-posiciones tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .tabla-posiciones tbody tr:hover {
+            background-color: #e6f3f2;
+        }
+
+        .tabla-posiciones td img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .tabla-posiciones .ultimos-5 span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            margin: 0 2px;
+        }
+
+        .resultado-gano {
+            color: #2a9d8f;
+        }
+
+        .resultado-empate {
+            color: #e9c46a;
+        }
+
+        .resultado-perdio {
+            color: #e76f51;
+        }
+
+        .partido-fase {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #264653;
+            margin: 20px 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .tabla-posiciones th, .tabla-posiciones td {
+                font-size: 12px;
+                padding: 8px;
+            }
+
+            .tabla-posiciones td img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .tabla-posiciones .ultimos-5 span {
+                width: 18px;
+                height: 18px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="../../index.html" class="logo">GolESPE 360</a>
+            <div class="header-actions">
+                <input type="search" class="search-bar" placeholder="Buscar equipos, jugadores...">
+                <div class="live-indicator">EN VIVO</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav class="navigation">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../../index.html" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../noticias/ultimasNoticias.html" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Noticias</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../mundial/clasificacion.html" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Mundial de Clubes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../partidos/calendario.html" class="nav-link">
+                        <span class="nav-icon"></span>
+                        <span>Partidos</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="mundial-header">
+        <h1 class="mundial-title">Copa Mundial de Clubes FIFA 2025</h1>
+        <p class="mundial-subtitle">El torneo más importante de clubes del mundo</p>
+        <div class="mundial-nav">
+            <a href="../partidos/proximos.html">PARTIDOS</a>
+            <a href="../noticias/ultimasNoticias.html">NOTICIAS</a>
+            <a href="../mundial/clasificacion.html">CLASIFICACIÓN</a>
+            <a href="#" class="active">ESTADÍSTICAS</a>
+        </div>
+    </div>
+
+    <main class="clasificacion-container">
+        <!-- Botón de Inicio -->
+        <a href="../../index.html" class="boton-inicio">
+            <i class="fas fa-arrow-left"></i> Volver al Inicio
+        </a>
+        
+        <section id="estadisticas" class="table-container">
+            <div class="section-title">Fase de Grupos - Estadísticas 2025</div>
+            
+            <!-- Grupo A -->
+            <div class="partido-fase">Grupo A</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2029.png" alt="Logo de Palmeiras"> Palmeiras</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/235.png" alt="Logo de Inter Miami"> Inter Miami</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/93.png" alt="Logo de Porto"> Porto</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>-1</td>
+                        <td>2</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/136.png" alt="Logo de Al-Ahly"> Al-Ahly</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>6</td>
+                        <td>-2</td>
+                        <td>2</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo B -->
+            <div class="partido-fase">Grupo B</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/382.png" alt="Logo de PSG"> PSG</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2026.png" alt="Logo de Botafogo"> Botafogo</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/83.png" alt="Logo de Atlético Madrid"> Atlético Madrid</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>-1</td>
+                        <td>6</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1742.png" alt="Logo de Seattle Sounders"> Seattle Sounders</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>-5</td>
+                        <td>0</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo C -->
+            <div class="partido-fase">Grupo C</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/89.png" alt="Logo de Benfica"> Benfica</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>9</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>7</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/165.png" alt="Logo de Bayern"> Bayern</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>12</td>
+                        <td>2</td>
+                        <td>10</td>
+                        <td>6</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2050.png" alt="Logo de Boca Juniors"> Boca Juniors</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>-1</td>
+                        <td>2</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1970.png" alt="Logo de Auckland City"> Auckland City</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>17</td>
+                        <td>-16</td>
+                        <td>1</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo D -->
+            <div class="partido-fase">Grupo D</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2022.png" alt="Logo de Flamengo"> Flamengo</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>7</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/363.png" alt="Logo de Chelsea"> Chelsea</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>6</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>6</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1936.png" alt="Logo de ES Tunis"> ES Tunis</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>5</td>
+                        <td>-4</td>
+                        <td>3</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1163.png" alt="Logo de LAFC"> LAFC</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>-3</td>
+                        <td>1</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo E -->
+            <div class="partido-fase">Grupo E</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/105.png" alt="Logo de Inter"> Inter</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/219.png" alt="Logo de Monterrey"> Monterrey</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2038.png" alt="Logo de River Plate"> River Plate</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1917.png" alt="Logo de Urawa Reds"> Urawa Reds</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>9</td>
+                        <td>-7</td>
+                        <td>0</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo F -->
+            <div class="partido-fase">Grupo F</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/103.png" alt="Logo de Dortmund"> Dortmund</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2028.png" alt="Logo de Fluminense"> Fluminense</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1937.png" alt="Logo de Mamelodi Sundowns"> Mamelodi Sundowns</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>0</td>
+                        <td>4</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1923.png" alt="Logo de Ulsan Hyundai"> Ulsan Hyundai</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td>-4</td>
+                        <td>0</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo G -->
+            <div class="partido-fase">Grupo G</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/360.png" alt="Logo de Manchester City"> Manchester City</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>13</td>
+                        <td>2</td>
+                        <td>11</td>
+                        <td>9</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/110.png" alt="Logo de Juventus"> Juventus</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>11</td>
+                        <td>6</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1916.png" alt="Logo de Al Ain"> Al Ain</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>12</td>
+                        <td>-10</td>
+                        <td>3</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1933.png" alt="Logo de Wydad AC"> Wydad AC</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>8</td>
+                        <td>-6</td>
+                        <td>0</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Grupo H -->
+            <div class="partido-fase">Grupo H</div>
+            <table class="tabla-posiciones">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Club</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                        <th>Últimos 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/86.png" alt="Logo de Real Madrid"> Real Madrid</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>7</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/136.png" alt="Logo de Al Hilal"> Al Hilal</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>5</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/172.png" alt="Logo de RB Salzburg"> RB Salzburg</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>4</td>
+                        <td>-2</td>
+                        <td>4</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-gano"><i class="fas fa-check"></i></span>
+                            <span class="resultado-empate"><i class="fas fa-minus"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/222.png" alt="Logo de Pachuca"> Pachuca</td>
+                        <td>3</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>3</td>
+                        <td>2</td>
+                        <td>7</td>
+                        <td>-5</td>
+                        <td>0</td>
+                        <td class="ultimos-5">
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                            <span class="resultado-perdio"><i class="fas fa-times"></i></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="leyenda">
+            <h3>Leyenda:</h3>
+            <ul>
+                <li><span class="resultado-gano"><i class="fas fa-check"></i></span> Victoria</li>
+                <li><span class="resultado-empate"><i class="fas fa-minus"></i></span> Empate</li>
+                <li><span class="resultado-perdio"><i class="fas fa-times"></i></span> Derrota</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2025 GolESPE 360. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

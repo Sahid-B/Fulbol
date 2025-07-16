@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendario - Mundial de Clubes 2025 | GolESPE 360</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    /* Estilos específicos para la página de calendario */
+    .calendario-contenedor {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    
+    .semana {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all var(--transition-medium);
+    }
+    
+    .semana:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+    
+    .semana h2 {
+      color: var(--primary-blue);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.75rem;
+      margin-top: 0;
+      position: relative;
+    }
+    
+    .semana h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background: var(--accent-green);
+      transition: var(--transition-medium);
+    }
+    
+    .semana:hover h2::after {
+      width: 100px;
+    }
+    
+    .partidos-lista {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0 0 0;
+    }
+    
+    .partido {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid var(--border-color);
+      transition: all var(--transition-fast);
+    }
+    
+    .partido:last-child {
+      border-bottom: none;
+    }
+    
+    .partido:hover {
+      background: rgba(30, 58, 138, 0.05);
+    }
+    
+    .fecha-hora {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      min-width: 120px;
+    }
+    
+    .equipos {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 600;
+    }
+    
+    .estadio {
+      color: var(--text-light);
+      min-width: 200px;
+      text-align: right;
+    }
+    
+    .etapa-torneo {
+      display: inline-block;
+      background: var(--primary-blue);
+      color: var(--white);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Botón de Inicio */
+    .boton-inicio {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: var(--primary-blue);
+      color: var(--white);
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      transition: all var(--transition-medium);
+    }
+
+    .boton-inicio:hover {
+      background: var(--hover-blue);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(30, 58, 138, 0.3);
+    }
+
+    /* Media Queries para diferentes dispositivos */
+    /* Tablet (768px - 1024px) */
+    @media (max-width: 1024px) and (min-width: 768px) {
+      .calendario-contenedor {
+        padding: 0 2rem;
+      }
+      
+      .partido {
+        flex-wrap: wrap;
+      }
+      
+      .fecha-hora, .estadio {
+        min-width: 150px;
+      }
+    }
+
+    /* Teléfono (hasta 767px) */
+    @media (max-width: 767px) {
+      .calendario-contenedor {
+        margin: 1rem;
+        padding: 0;
+      }
+      
+      .semana {
+        padding: 1.5rem;
+      }
+      
+      .partido {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        padding: 1rem 0;
+      }
+      
+      .equipos {
+        text-align: left;
+        width: 100%;
+        order: -1;
+        font-size: 1.1rem;
+      }
+      
+      .estadio, .fecha-hora {
+        text-align: left;
+        width: 100%;
+        min-width: auto;
+      }
+      
+      .header-actions {
+        gap: 1rem;
+      }
+    }
+
+    /* Pantalla de escritorio (más de 1024px) */
+    @media (min-width: 1025px) {
+      .calendario-contenedor {
+        max-width: 1400px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <a href="../../index.html" class="logo">GolESPE 360</a>
+      <div class="header-actions">
+        <input type="search" class="search-bar" placeholder="Buscar partidos, equipos...">
+        <div class="live-indicator">🔴 EN VIVO</div>
+      </div>
+    </div>
+  </header>
+  
+  <nav class="navigation">
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="../../index.html" class="nav-link">
+            <span class="nav-icon"></span>
+            <span>Inicio</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../noticias/ultimasNoticias.html" class="nav-link">
+            <span class="nav-icon"></span>
+            <span>Noticias</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link active">
+            <span class="nav-icon"></span>
+            <span>Calendario</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="../mundial/clasificacion.html" class="nav-link">
+            <span class="nav-icon"></span>
+            <span>Clasificación</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="calendario-contenedor">
+    <!-- Botón de Inicio adicional -->
+    <a href="../../index.html" class="boton-inicio">← Volver al Inicio</a>
+    
+    <h1 style="margin-bottom: 2rem;">Calendario - Mundial de Clubes 2025</h1>
+    
+    <div class="semana">
+      <span class="etapa-torneo">Fase Final</span>
+      <h2>Semana del 8 al 14 Julio</h2>
+      <ul class="partidos-lista">
+        <li class="partido">
+          <span class="fecha-hora">8 Jul 2025 - 18:00</span>
+          <span class="equipos">Fluminense vs Chelsea</span>
+          <span class="estadio">Estadio Maracaná (Semifinal)</span>
+        </li>
+        <li class="partido">
+          <span class="fecha-hora">9 Jul 2025 - 20:30</span>
+          <span class="equipos">PSG vs Real Madrid</span>
+          <span class="estadio">Estadio Mineirão (Semifinal)</span>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="semana">
+      <span class="etapa-torneo">Finales</span>
+      <h2>Semana del 13 al 15 Julio</h2>
+      <ul class="partidos-lista">
+        <li class="partido">
+          <span class="fecha-hora">13 Jul 2025 - 14:00</span>
+          <span class="equipos">Chelsea vs PSG</span>
+          <span class="estadio">Estadio Maracaná (Final)</span>
+        </li>
+        <li class="partido">
+          <span class="fecha-hora">15 Jul 2025 - 12:00</span>
+          <span class="equipos">Fluminense vs Real Madrid</span>
+          <span class="estadio">Estadio Mineirão (3er Puesto)</span>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="semana">
+      <span class="etapa-torneo">Fase de Grupos</span>
+      <h2>Semana del 14 al 20 Junio</h2>
+      <ul class="partidos-lista">
+        <li class="partido">
+          <span class="fecha-hora">14 Jun 2025 - 16:00</span>
+          <span class="equipos">Al Ahly SC vs Inter Miami</span>
+          <span class="estadio">Estadio Morumbi</span>
+        </li>
+        <li class="partido">
+          <span class="fecha-hora">15 Jun 2025 - 14:30</span>
+          <span class="equipos">Bayern vs Auckland City</span>
+          <span class="estadio">Arena Corinthians</span>
+        </li>
+        <li class="partido">
+          <span class="fecha-hora">16 Jun 2025 - 19:00</span>
+          <span class="equipos">Chelsea vs LAFC</span>
+          <span class="estadio">Estadio Beira-Rio</span>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 GolESPE 360. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>

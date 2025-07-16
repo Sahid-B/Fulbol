@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GolESPE 360 - Apuestas La Liga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../../css/simulador.css">
+</head>
+<body>
+
+     <a href="../../index.html" class="boton-inicio">
+        <i class="fas fa-arrow-left"></i> Inicio
+    </a>
+    <!-- Header -->
+      <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-futbol"></i>
+                GolESPE 360
+            </a>
+            <div class="user-actions">
+                <div class="balance">
+                    <i class="fas fa-wallet"></i>
+                    $100.00
+                </div>
+                <button class="btn-recharge" id="btnRecharge">
+                    <i class="fas fa-credit-card"></i> Recargar
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navegación por mercados -->
+    <nav class="nav-tabs">
+        <div class="nav-container">
+            <ul class="tabs">
+                <li class="tab active">Principal</li>
+                <li class="tab">Ganador</li>
+                <li class="tab">Goles</li>
+                <li class="tab">Ambos marcan</li>
+                <li class="tab">Handicap</li>
+                <li class="tab">Especiales</li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Contenido principal -->
+    <div class="main-container">
+        <!-- Mercados de apuestas -->
+        <div class="markets-container">
+            <div class="market-header">
+                <div class="market-title">
+                    <img src="https://a.espncdn.com/i/leaguelogos/soccer/500/15.png" alt="La Liga" class="liga-logo">
+                    La Liga Santander
+                    <span class="event-count">8 partidos</span>
+                </div>
+                <div>
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+            </div>
+            
+            <ul class="event-list">
+                <!-- Evento 1 -->
+                <li class="event-item">
+                    <div class="event-teams">
+                        <div class="team team-home">
+                            <span class="team-name">Real Madrid</span>
+                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/86.png&h=50&w=50" alt="Real Madrid" class="team-logo">
+                        </div>
+                        <div class="event-vs">VS</div>
+                        <div class="team team-away">
+                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/83.png&h=50&w=50" alt="Barcelona" class="team-logo">
+                            <span class="team-name">Barcelona</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-time">Sáb 14 Oct - 16:00 | Estadio Santiago Bernabéu</div>
+                    
+                    <!-- Mercado principal -->
+                    <div class="market-title-small">Ganador del partido</div>
+                    <div class="market-options">
+                        <div class="odd">
+                            <div class="odd-type">Local</div>
+                            <div class="odd-value">2.10</div>
+                        </div>
+                        <div class="odd">
+                            <div class="odd-type">Empate</div>
+                            <div class="odd-value">3.40</div>
+                        </div>
+                        <div class="odd">
+                            <div class="odd-type">Visitante</div>
+                            <div class="odd-value">2.80</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Más mercados -->
+                    <div class="more-markets">
+                        <div class="market-btn">Más de 2.5 goles</div>
+                        <div class="market-btn">Ambos marcan</div>
+                        <div class="market-btn">Handicap (+1)</div>
+                        <div class="market-btn">Goles 1ª parte</div>
+                        <div class="market-btn">Resultado exacto</div>
+                        <div class="market-btn">+15 mercados</div>
+                    </div>
+                </li>
+                
+                <!-- Evento 2 -->
+                <li class="event-item">
+                    <div class="event-teams">
+                        <div class="team team-home">
+                            <span class="team-name">Atlético Madrid</span>
+                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1068.png&h=50&w=50" alt="Atlético Madrid" class="team-logo">
+                        </div>
+                        <div class="event-vs">VS</div>
+                        <div class="team team-away">
+                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/244.png&h=50&w=50" alt="Sevilla" class="team-logo">
+                            <span class="team-name">Sevilla</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-time">Sáb 14 Oct - 18:30 | Wanda Metropolitano</div>
+                    
+                    <!-- Mercado principal -->
+                    <div class="market-title-small">Ganador del partido</div>
+                    <div class="market-options">
+                        <div class="odd">
+                            <div class="odd-type">Local</div>
+                            <div class="odd-value">1.85</div>
+                        </div>
+                        <div class="odd">
+                            <div class="odd-type">Empate</div>
+                            <div class="odd-value">3.20</div>
+                        </div>
+                        <div class="odd">
+                            <div class="odd-type">Visitante</div>
+                            <div class="odd-value">4.00</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Más mercados -->
+                    <div class="more-markets">
+                        <div class="market-btn">Más de 2.5 goles</div>
+                        <div class="market-btn">Ambos marcan</div>
+                        <div class="market-btn">Handicap (+1)</div>
+                        <div class="market-btn">Goles 1ª parte</div>
+                        <div class="market-btn">Resultado exacto</div>
+                        <div class="market-btn">+15 mercados</div>
+                    </div>
+                </li>
+                
+                <!-- Evento 3 -->
+                <li class="event-item">
+                    <div class="event-teams">
+                        <div class="team team-home">
+                            <span class="team-name">Valencia</span>
+                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/94.png&h=50&w=50" alt="Valencia" class="team-logo">
+                        </div>
+                        <div class="event-vs">VS</div>
+                        <div class="team team-away">
+                            <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/89.png&h=50&w=50" alt="Betis" class="team-logo">
+                            <span class="team-name">Betis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="event-time">Dom 15 Oct - 14:00 | Mestalla</div>
+                    
+                    <!-- Mercado principal -->
+                    <div class="market-title-small">Ganador del partido</div>
+                    <div class="market-options">
+                        <div class="odd">
+                            <div class="odd-type">Local</div>
+                            <div class="odd-value">2.30</div>
+                        </div>
+                        <div class="odd">
+                            <div class="odd-type">Empate</div>
+                            <div class="odd-value">3.10</div>
+                        </div>
+                        <div class="odd">
+                            <div class="odd-type">Visitante</div>
+                            <div class="odd-value">2.90</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Más mercados -->
+                    <div class="more-markets">
+                        <div class="market-btn">Más de 2.5 goles</div>
+                        <div class="market-btn">Ambos marcan</div>
+                        <div class="market-btn">Handicap (+1)</div>
+                        <div class="market-btn">Goles 1ª parte</div>
+                        <div class="market-btn">Resultado exacto</div>
+                        <div class="market-btn">+15 mercados</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="bet-slip">
+                <div class="bet-slip-header">
+                    <div class="bet-slip-title">Mi Apuesta</div>
+                    <div class="bet-slip-count">0</div>
+                </div>
+                
+                <div class="empty-slip">
+                    <i class="fas fa-ticket-alt"></i>
+                    <p>No hay selecciones</p>
+                    <small>Haz clic en las cuotas para agregar apuestas</small>
+                </div>
+            </div>
+            
+            <div class="promo-banner">
+                <div class="promo-title">¡Apuesta Segura!</div>
+                <div class="promo-text">Si tu apuesta pierde por 1 gol, te devolvemos hasta $20</div>
+                <button class="btn-promo">Aplicar Promo</button>
+            </div>
+            
+            <div class="clasificacion">
+                <div class="clasificacion-header">
+                    <i class="fas fa-trophy"></i>
+                    Clasificación La Liga
+                </div>
+                
+                <table class="clasificacion-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Equipo</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pos">1</td>
+                            <td class="equipo">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/86.png&h=50&w=50" alt="Real Madrid" class="equipo-logo">
+                                Real Madrid
+                            </td>
+                            <td>25</td>
+                        </tr>
+                        <tr>
+                            <td class="pos">2</td>
+                            <td class="equipo">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/83.png&h=50&w=50" alt="Barcelona" class="equipo-logo">
+                                Barcelona
+                            </td>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <td class="pos">3</td>
+                            <td class="equipo">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/1068.png&h=50&w=50" alt="Atlético Madrid" class="equipo-logo">
+                                Atlético Madrid
+                            </td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td class="pos">4</td>
+                            <td class="equipo">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/96.png&h=50&w=50" alt="Real Sociedad" class="equipo-logo">
+                                Real Sociedad
+                            </td>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <td class="pos">5</td>
+                            <td class="equipo">
+                                <img src="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/89.png&h=50&w=50" alt="Betis" class="equipo-logo">
+                                Betis
+                            </td>
+                            <td>16</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>GolESPE 360</h4>
+                <p>La casa de apuestas líder en fútbol español con las mejores cuotas y promociones.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>La Liga</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Partidos</a></li>
+                    <li><a href="#">Clasificación</a></li>
+                    <li><a href="#">Estadísticas</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Empresa</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Sobre Nosotros</a></li>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Juego Responsable</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Ayuda</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Preguntas Frecuentes</a></li>
+                    <li><a href="#">Métodos de Pago</a></li>
+                    <li><a href="#">Guía de Apuestas</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2023 GolESPE 360. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Recarga -->
+    <div class="login-modal" id="rechargeModal">
+        <div class="modal-content" id="modalContent">
+            <span class="close-modal" id="closeModal">&times;</span>
+            
+            <div class="modal-tabs">
+                <div class="modal-tab active" data-tab="recharge">Recargar Saldo</div>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Formulario de Recarga -->
+                <div class="recarga-section active" id="rechargeSection">
+                    <h2>Recargar Saldo</h2>
+                    <div class="recarga-container">
+                        <div class="tarjeta3d" id="tarjeta3d">
+                            <div class="chip3d"></div>
+                            <div class="numero3d" id="numero3d">•••• •••• •••• ••••</div>
+                            <div class="datos3d">
+                                <div>
+                                    <div>TITULAR</div>
+                                    <div id="titular3d"><strong>USUARIO</strong></div>
+                                </div>
+                                <div>
+                                    <div>VÁLIDA HASTA</div>
+                                    <div id="fecha3d"><strong>MM/AA</strong></div>
+                                </div>
+                            </div>
+                            <div class="logo3d" id="banco3d">Banco</div>
+                        </div>
+                        <form class="recarga-form" id="recargaForm" autocomplete="off">
+                            <div class="form-group">
+                                <label>Número de Tarjeta</label>
+                                <input type="text" maxlength="16" id="inputNumero" pattern="\d{16}" required placeholder="Ej: 0123456789012345">
+                            </div>
+                            <div class="form-group">
+                                <label>Nombre del Titular</label>
+                                <input type="text" maxlength="30" id="inputTitular" required placeholder="Nombre Apellido">
+                            </div>
+                            <div class="form-group">
+                                <label>Fecha Expiración</label>
+                                <input type="text" maxlength="5" id="inputFecha" pattern="\d{2}/\d{2}" required placeholder="MM/AA">
+                            </div>
+                            <div class="form-group">
+                                <label>Monto a Recargar</label>
+                                <input type="number" min="1" id="inputMonto" required placeholder="Monto">
+                            </div>
+                            <button type="submit" class="btn-submit">Recargar</button>
+                        </form>
+                        <div class="saldo-usuario">
+                            <strong>Saldo actual: $<span id="saldoUsuario">100.00</span></strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Variables globales
+        let saldo = 100.00;
+
+        // Mostrar/ocultar modal
+        const btnRecharge = document.getElementById('btnRecharge');
+        const rechargeModal = document.getElementById('rechargeModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalContent = document.getElementById('modalContent');
+
+        btnRecharge.addEventListener('click', () => {
+            rechargeModal.style.display = 'flex';
+            setTimeout(() => {
+                modalContent.classList.add('active');
+            }, 10);
+        });
+
+        closeModal.addEventListener('click', () => {
+            modalContent.classList.remove('active');
+            setTimeout(() => {
+                rechargeModal.style.display = 'none';
+            }, 300);
+        });
+
+        // Cerrar al hacer clic fuera del modal
+        rechargeModal.addEventListener('click', (e) => {
+            if (e.target === rechargeModal) {
+                modalContent.classList.remove('active');
+                setTimeout(() => {
+                    rechargeModal.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        // Banco por prefijo
+        function actualizarBancoYColor(numero) {
+            const tarjeta = document.getElementById('tarjeta3d');
+            const banco = document.getElementById('banco3d');
+            let color, nombreBanco;
+            
+            if (numero.startsWith('01')) {
+                color = 'linear-gradient(135deg, #ffe066 60%, #ffd60a 100%)';
+                nombreBanco = 'Banco de Pichincha';
+            } else if (numero.startsWith('02')) {
+                color = 'linear-gradient(135deg, #4e73df 60%, #1cc88a 100%)';
+                nombreBanco = 'Banco del Pacífico';
+            } else if (numero.startsWith('03')) {
+                color = 'linear-gradient(135deg, #a259c6 60%, #6a0572 100%)';
+                nombreBanco = 'Banco de Guayaquil';
+            } else {
+                color = 'linear-gradient(135deg, #4e73df 60%, #1cc88a 100%)';
+                nombreBanco = 'Banco';
+            }
+            
+            tarjeta.style.background = color;
+            banco.textContent = nombreBanco;
+        }
+
+        // Efecto 3D al interactuar
+        ['inputNumero','inputTitular','inputFecha','inputMonto'].forEach(id => {
+            const input = document.getElementById(id);
+            input.addEventListener('focus', () => {
+                document.getElementById('tarjeta3d').classList.add('input-activo');
+            });
+            input.addEventListener('blur', () => {
+                document.getElementById('tarjeta3d').classList.remove('input-activo');
+            });
+        });
+
+        // Actualizar tarjeta en tiempo real
+        const inputNumero = document.getElementById('inputNumero');
+        const inputTitular = document.getElementById('inputTitular');
+        const inputFecha = document.getElementById('inputFecha');
+
+        inputNumero.addEventListener('input', e => {
+            let val = e.target.value.replace(/\D/g, '').slice(0,16);
+            e.target.value = val;
+            let formateado = val.replace(/(.{4})/g, '$1 ').trim();
+            document.getElementById('numero3d').textContent = formateado.padEnd(19, '•');
+            actualizarBancoYColor(val);
+        });
+
+        inputTitular.addEventListener('input', e => {
+            document.getElementById('titular3d').textContent = e.target.value.toUpperCase() || 'USUARIO';
+        });
+
+        inputFecha.addEventListener('input', e => {
+            let val = e.target.value.replace(/\D/g, '').slice(0,4);
+            if(val.length >= 3) val = val.slice(0,2) + '/' + val.slice(2);
+            e.target.value = val;
+            document.getElementById('fecha3d').textContent = val || 'MM/AA';
+        });
+
+        // Recarga de saldo
+        document.getElementById('recargaForm').addEventListener('submit', function(ev){
+            ev.preventDefault();
+            const monto = parseFloat(document.getElementById('inputMonto').value);
+            
+            if(monto > 0) {
+                saldo += monto;
+                document.getElementById('saldoUsuario').textContent = saldo.toFixed(2);
+                const balanceHeader = document.querySelector('.balance');
+                if(balanceHeader) balanceHeader.innerHTML = `<i class="fas fa-wallet"></i> $${saldo.toFixed(2)}`;
+                
+                this.reset();
+                document.getElementById('numero3d').textContent = '•••• •••• •••• ••••';
+                document.getElementById('titular3d').textContent = 'USUARIO';
+                document.getElementById('fecha3d').textContent = 'MM/AA';
+                actualizarBancoYColor('');
+                
+                // Cerrar modal después de recargar
+                modalContent.classList.remove('active');
+                setTimeout(() => {
+                    rechargeModal.style.display = 'none';
+                }, 300);
+                
+                alert('¡Recarga exitosa!');
+            }
+        });
+
+        // Manejo de apuestas
+        document.querySelectorAll('.odd').forEach(odd => {
+            odd.addEventListener('click', function() {
+                this.classList.toggle('active');
+                updateBetSlip();
+            });
+        });
+
+        // Función para actualizar el boleto de apuestas
+        function updateBetSlip() {
+            const activeBets = document.querySelectorAll('.odd.active').length;
+            document.querySelector('.bet-slip-count').textContent = activeBets;
+            
+            if (activeBets > 0) {
+                document.querySelector('.empty-slip').style.display = 'none';
+                // Aquí iría la lógica para mostrar las apuestas seleccionadas
+            } else {
+                document.querySelector('.empty-slip').style.display = 'block';
+            }
+        }
+
+        // Función para los botones de mercado
+        document.querySelectorAll('.market-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Aquí iría la lógica para cambiar al mercado seleccionado
+                alert('Mostrando mercado: ' + this.textContent);
+            });
+        });
+
+        // Función para las pestañas de navegación
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelector('.tab.active').classList.remove('active');
+                this.classList.add('active');
+                // Aquí iría la lógica para cambiar entre mercados
+            });
+        });
+    </script>
+</body>
+</html>
